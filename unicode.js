@@ -82,7 +82,7 @@ Use String.fromCharCode to swap these characters and create a new string: "haunc
 Assign the result to a variable named swappedString.
 
 */
-
+/*
 //Starter Code
 // Task 1
 let inputString1 = "Code";
@@ -95,6 +95,36 @@ let wordFromCodePoints; // Your code here
 // Task 3
 let inputString2 = "Launch";
 let swappedString; // Your code here
+
+// Log all results
+console.log({
+  firstCodePoint,
+  thirdCodePoint,
+  wordFromCodePoints,
+  swappedString,
+});
+*/
+// Task 1: Extract Code Points
+let inputString1 = "Code";
+// charCodeAt(index) gets the number for the character at that position
+firstCodePoint = inputString1.charCodeAt(0);  // 'C' -> 67
+thirdCodePoint = inputString1.charCodeAt(2);  // 'd' -> 100
+
+// Task 2: Create a Word from Code Points
+// String.fromCharCode can take multiple numbers at once
+wordFromCodePoints = String.fromCharCode(74, 97, 118, 97, 83, 99, 114, 105, 112, 116);
+
+// Task 3: Swap First and Last Characters
+let inputString2 = "Launch";
+// 1. Get the numbers for the first and last letters
+let firstCharNum = inputString2.charCodeAt(0); // 'L' -> 76
+let lastCharNum = inputString2.charCodeAt(inputString2.length - 1); // 'h' -> 104
+
+// 2. Convert them back to strings in reverse order 
+// and "sandwich" the middle part of the word
+swappedString = String.fromCharCode(lastCharNum) + 
+                inputString2.slice(1, -1) + 
+                String.fromCharCode(firstCharNum);
 
 // Log all results
 console.log({
